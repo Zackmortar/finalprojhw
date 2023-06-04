@@ -1,95 +1,204 @@
-*{
-    font-family: 'Arvo', serif;
-    
+:root {
+  --main-color: #6fcdfc;
+  --interactive-color: #5acaec;
+  --accent-color: #7ed1e6;
+  --body-color: #a3cfd8;
+  --text-color: rgb(255, 255, 255);
+  --lining-color: rgb(76, 174, 255);
 }
-header{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    background-color: #025e8b;
-    margin: 0px;
-    padding: 0px;
+* {
+  font-family: "Arvo", serif;
+  
 }
-#box{
-    width: 40em;
-    height: 10px;
+header {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  background-color: var(--main-color);
+  margin: 0px;
+  padding: 0px;
+  color: var(--text-color);
 }
-svg{
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 0px;
-    flex: 1;
+#box {
+  width: 50em;
+  height: 10px;
 }
-.products{
-    display: flex;
-    flex-wrap: wrap;
+.products {
+  display: flex;
+  flex-wrap: wrap;
 }
-.product{
-    width: 200px;
-    height: 300px;
-    flex: 1;
-    text-align: center;
-    border-radius: 7px;
-    background-color: #bcebf7;
-    margin: 30px;
-    margin-top: 5px;
-    margin-bottom: 90px;
-    padding:15px;
-    border: 3px solid black;
+.product {
+  width: 200px;
+  height: 350px;
+  flex: 1;
+  text-align: center;
+  color: var(--text-color);
+  border-radius: 7px;
+  background-color: var(--accent-color);
+  margin: 30px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid var(--lining-color);
 }
-.productbtn{
-    background-color: #2890af;
-    /* 00B4D8 */
-    width: 200px;
-    height: 50px;
-    margin: 0px;
-    border: 3px solid black;
-    font-family: 'Arvo',serif;
-    font-size: 20px;
-    font-weight: 700;
-    bottom: 0;
-    border-radius: 10px;
+#parg{
+  width: 150px;
+  margin:25px;
+  text-align: justify;
+  padding: 0px;
 }
-.prodimg{
-    width: 200px;
-    border: 3px solid black;
+.product:hover{
+  flex: 3;
+  width: 600px;
 }
-.prodtext{
-    margin-left: 5px;
-    height: 90px;
+.product:hover>.prodimg{
+  animation-name: imageanim;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
-footer{
-    display: flex;
-    flex-direction: row;
-    height: 80px;
-    width: 100%;
-    bottom: 0;
-    background-color: #025e8b;
-    position: fixed;
+.product:hover>.prodtext{
+  margin: 0px
 }
-footer> a, a:hover, a:focus, a:active{
-    text-decoration: none;
-    text-align: center;
-    display: flex;
-    color: inherit;
-    flex:1;
-    padding: auto;
-    margin: auto;
-    text-align: center;
+.product:hover>.productbtn{
+  margin: 0px;
+}
+.product:hover>#parg{
+  display:none;
+  margin: 0px;
+}
+.product:default>.prodtext{
+  margin: 0px
+}
+.product:default>.productbtn{
+  margin: 0px;
+}
+.product:default>#parg{
+  display:none;
+  margin: 0px;
+}
+.productbtn {
+  background-color: var(--interactive-color);
+  /* 00B4D8 */
+  width: 200px;
+  color: var(--text-color);
+  height: 50px;
+  margin: 0px;
+  border: 1px solid var(--lining-color);
+  font-family: "Arvo", serif;
+  font-size: 20px;
+  font-weight: 700;
+  bottom: 0;
+  border-radius: 10px;
+}
+.prodimg {
+  width: 200px;
+  border: 3px solid var(--lining-color);
+  border-radius: 0.2em;
+}
+.prodtext {
+  margin-left: 5px;
+  margin-bottom: 0px;
+  height: 50px;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  height: 6.4em;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--main-color);
+  position: relative;
+}
+footer > a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  color: inherit;
+  flex: 1;
+  padding: auto;
+  margin: auto;
+  text-align: center;
+  font-size: 15px;
+}
+#email:hover{
+  animation-duration: 0.25s;
+  animation-name: emailhighlight;
+  animation-fill-mode: forwards;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#whatsapp:hover {
+  animation-duration: 0.25s;
+  animation-name: whatsapphighlight;
+  animation-fill-mode: forwards;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#youtube:hover {
+  animation-duration: 0.25s;
+  animation-name: youtubehighlight;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+body {
+  margin: 0px;
+  background-color: var(--body-color);
+}
+#name {
+  margin: 20px;
+  flex: 1;
+}
+#headtitle {
+  flex: 5;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 60px;
+}
+@keyframes emailhighlight {
+  from {
     font-size: 15px;
+    color: inherit;
+  }
+  to {
+    font-size: 16px;
+    color: orangered;
+  }
 }
-body{
-    margin: 0px;
-    background-color: #edfcff;
+@keyframes whatsapphighlight {
+  from {
+    font-size: 15px;
+    color: inherit;
+  }
+  to {
+    font-size: 16px;
+    color: green;
+  }
 }
-#name{
-    margin: 20px;
-    flex: 1;
+@keyframes youtubehighlight {
+  0% {
+    font-size: 15px;
+    color: inherit;
+  }
+  100% {
+    font-size: 16px;
+    color: red;
+  }
 }
-#headtitle{
-    flex: 5;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 60px;
+@keyframes imageanim{
+  0% {width: 200px;
+  }
+  100% {
+    width: 325px;
+  }
 }
+
+
+
+
